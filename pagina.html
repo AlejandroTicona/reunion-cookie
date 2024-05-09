@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reuniones Discretas Club De Lectura LCDHLP</title>
+    <link rel="icon" href="./img/logo.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Invitación Reunión Presencial Club de Lectura LCDHLP</h1>
+        <div style="height: 20px;"></div>
+        <h3>(ATENCIÓN: Este mensaje solo se visualizará una vez)</h3>
+        <!-- Imagen centrada -->
+        <img class="logo" src="./img/logo.png" alt="Logo del club de lectura">
+        <div class="highlight">🤩 Iniciamos con el nuevo ciclo de reuniones presenciales!!!</div>
+        <div class="info">
+            <p>Las decisiones como lugar de la siguiente reunión, libros a leer, metas quincenales o votos democráticos
+                grupales se tomarán directamente en estas reuniones.</p>
+            <p>Aclarado esto, informamos que las reuniones serán cada 15 días alternando de día de fin de semana. El
+                tema
+                faltas será controlado internamente con los coordinadores (ojo en caso de faltar).</p>
+            <p>La ubicación de las reuniones presenciales solo se enviará a este grupo 1 vez al mes, por lo que debes
+                prever
+                tus faltas y participación para no ser purgado.</p>
+            <p>El grupo se manejará con mayor exclusividad y secretismo. Si algún miembro revela la ubicación de alguna
+                reunión será sancionado. No fomentemos el desinterés e indisciplina; podemos seguir construyendo juntos
+                un
+                mejor club y comunidad para forjarnos como seres humanos fuertes físicamente, mentalmente y
+                espiritualmente.
+            </p>
+        </div>
+        <div class="important">Ya conocen la segunda regla del club 😏</div>
+
+        <div class="highlight" id="contador"></div>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Verificar si la cookie ya existe
+        var hasVisited = document.cookie.indexOf("visited=true") !== -1;
+
+        // Si la cookie ya existe, bloquear el acceso
+        if (hasVisited) {
+            alert("Lo siento, solo se permite una visualización por dispositivo.");
+            window.location.href = "bloqueado.html"; // Redirigir a una página de bloqueo
+        } else {
+            // Establecer una cookie para marcar que el dispositivo ha visitado la página
+            document.cookie = "visited=true; max-age=86400"; // Cookie válida por 1 día (86400 segundos)
+        }
+
+
+        // Fecha y hora objetivo (11 de mayo de 2024 a las 18:00)
+        var fechaObjetivo = new Date("May 11, 2024 18:00:00").getTime();
+
+        // Actualizar el contador cada segundo
+        var x = setInterval(function () {
+
+            // Obtener la fecha y hora actual
+            var ahora = new Date().getTime();
+
+            // Calcular la diferencia de tiempo entre la fecha objetivo y la actual
+            var diferencia = fechaObjetivo - ahora;
+
+            // Calcular días, horas, minutos y segundos restantes
+            var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            var horas = Math.floor((dias * 24) + (diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            var segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            // Mostrar el contador en el elemento con id "contador"
+            document.getElementById("contador").innerHTML = "Estamos a " + horas + " horas, " +
+                minutos + " minutos y " + segundos + " segundos de nuestra siguiente reunión";
+
+            // Si el tiempo objetivo se alcanza, mostrar un mensaje
+            if (diferencia < 0) {
+                clearInterval(x);
+                document.getElementById("contador").innerHTML = "¡Ya es la hora!";
+            }
+        }, 1000); // Actualizar cada segundo
+    </script>
+
+</body>
+
+</html>

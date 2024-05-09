@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+    background-color: #463a3a; /* Fondo gris cómodo */
+    color: white; /* Texto blanco */
+    font-family: 'Poppins', sans-serif; /* Tipo de fuente */
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px; /* Establecer el ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+}
+
+h1 {
+    text-align: center; /* Centrar el texto */
+    
+}
+
+h2{
+    text-align: center; /* Centrar horizontalmente */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 50%; /* Ubicación vertical en la mitad de la página */
+    left: 50%; /* Ubicación horizontal en la mitad de la página */
+    transform: translate(-50%, -50%); /* Centrar completamente el texto */
+}
+h3 {
+    text-align: center; /* Centrar el texto */
+    color: #bfff00;
+}
+
+.logo {
+    display: block; /* Hacer que la imagen sea un bloque */
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
+    max-width: 500px; /* Establecer un ancho máximo para la imagen */
+    height: auto; /* Mantener la relación de aspecto de la imagen */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.highlight {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00e5ffc0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.important {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #a5d70f;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 20px;
+}
+
+.rule {
+    font-style: italic;
+    color: #6c757d;
+}
