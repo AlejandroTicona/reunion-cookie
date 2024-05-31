@@ -54,7 +54,7 @@
 
 
         // Fecha y hora objetivo (11 de mayo de 2024 a las 18:00)
-        var fechaObjetivo = new Date("May 26, 2024 17:30:00").getTime();
+        var fechaObjetivo = new Date("May 31, 2024 17:30:00").getTime();
 
         // Actualizar el contador cada segundo
         var x = setInterval(function () {
@@ -66,7 +66,7 @@
             var diferencia = fechaObjetivo - ahora;
 
             // Calcular días, horas, minutos y segundos restantes
-            var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            var dias = Math.floor((diferencia / (1000 * 60 * 60 * 24))+1);
             var horas = Math.floor((dias * 24) + (diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
             var segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
